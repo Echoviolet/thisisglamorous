@@ -76,20 +76,36 @@ $(document).ready(function(){
        });
 
     $('.left').mouseenter(function(){
-        $('.mask').fadeIn(1000);
+        $('.mask').fadeIn(500);
     });
     $('.left').mouseleave(function(){
-        $('.mask').fadeOut(1000);
+        $('.mask').fadeOut(500);
     });
 
     $('.upper').mouseenter(function(){
-        $('.mask1').fadeIn(1000);
+        $('.mask1').fadeIn(500);
     });
     $('.upper').mouseleave(function(){
-        $('.mask1').fadeOut(1000);
+        $('.mask1').fadeOut(500);
     });
 
+    $('.showToggle').mouseenter(function(){
+        $('.mask3').fadeIn(500);
+    });
+    $('.showToggle').mouseleave(function(){
+        $('.mask3').fadeOut(500);
+    });
 
+    $('.showToggle1').mouseenter(function(){
+        $('.mask4').fadeIn(500);
+    });
+    $('.showToggle1').mouseleave(function(){
+        $('.mask4').fadeOut(500);
+    });
+
+    //$('.black-image').mouseenter(function(){
+    //    $('.surface').fadeOut();
+    //})
 
 
 

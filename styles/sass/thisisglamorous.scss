@@ -156,14 +156,13 @@ body{
     margin-top: 13px;
     .main {
       text-align: left;
-      padding-left: 180px;
       .left {
         display: inline-block;
         vertical-align: top;
-        width: 44%;
+        width: 50%;
         img {
           width: 600px;
-          height: 615px;
+          height: 600px;
         }
         .mask {
           display: none;
@@ -195,15 +194,15 @@ body{
       .right {
         display: inline-block;
         vertical-align: top;
-        width: 55%;
+        width: 49%;
         .content {
           background: #f2f2f2;
-          width: 52%;
+          width: 65%;
           padding-bottom: 20px;
           a {
             color: #000;
             img {
-              width: 400px;
+              width: 398px;
               height: 600;
             }
             h2 {
@@ -233,10 +232,10 @@ body{
         vertical-align: top;
         width: 44%;
         position: absolute;
-        margin-top: -175px;
+        margin-top: -190px;
         img {
           width: 600px;
-          height: 615px;
+          height: 600px;
         }
         .mask1 {
           display: none;
@@ -269,13 +268,12 @@ body{
         display: inline-block;
         vertical-align: top;
         position: absolute;
-        margin: 20px 0 0 621px;
+        margin: 20px 0 0 630px;
         width: 505px;
         padding: 10px 10px 10px 15px;
         background: #f2f2f2;
         .content {
           width: 55%;
-          padding-bottom: 20px;
           a {
             color: #000;
             img {
@@ -301,8 +299,190 @@ body{
                 margin: 15px 18px 0 20px;
                 line-height: 23px;
               }
+              .up-left,.up-right,.down-left,.down-right{
+                position: absolute;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                cursor: default;
+              }
+              .up-left{
+                top: -10px;
+                left: -295px;
+                border-width: 30px 30px 0 0;
+                border-color: #000 transparent transparent transparent;
+              }
+              .up-right{
+                top: -10px;
+                left: 205px;
+                border-width: 0 30px 30px 0;
+                border-color: transparent #000 transparent transparent;
+              }
+              .down-left{
+                top: 408px;
+                left: -295px;
+                border-width: 30px 0 0 30px;
+                border-color: transparent transparent transparent #000;
+              }
+              .down-right{
+                top: 408px;
+                left: 205px;
+                border-width: 0 0 30px 30px;
+                border-color: transparent transparent #000 transparent;
+
+              }
             }
           }
+        }
+      }
+      .social{
+        padding: 10px 0 0 10px;
+        position: absolute;
+        width: 150px;
+        height: 165px;
+        border: 10px solid #000;
+        margin-top: 430px;
+        a{
+          font-family: 'futura-pt', 'Futura', 'Helvetica Neue', sans-serif;
+          display: block;
+          font-size: 16px;
+          color: #000;
+          margin-bottom: 5px;
+          &:hover{
+            color:lightgray;
+          }
+        }
+      }
+      .copy {
+        margin-top: 490px !important;
+        margin-left: 205px !important;
+      }
+      .other{
+        margin-top: 490px !important;
+        margin-left: 761px !important;
+      }
+      .showToggle {
+        display: inline-block;
+        vertical-align: top;
+        width: 44%;
+        position: absolute;
+        margin-top: -338px;
+        img {
+          width: 600px;
+          height: 600px;
+        }
+        .mask3 {
+          display: none;
+          width: 500px;
+          height: 190px;
+          background: #000;
+          position: absolute;
+          margin: -245px 0 0 50px;
+          text-align: center;
+          padding-top: 10px;
+          a {
+            color: #fff;
+            h2 {
+              font-size: 16px;
+              margin-top: 15px;
+            }
+            h3 {
+              font-size: 24px;
+              margin-top: 15px;
+              font-weight: bold;
+            }
+            p {
+              font-size: 14px;
+              margin-top: 20px;
+            }
+          }
+        }
+      }
+      .longer {
+        margin-top: 280px;
+      }
+      .showToggle1 {
+        display: inline-block;
+        vertical-align: top;
+        width: 44%;
+        position: absolute;
+        margin-top: 490px;
+        margin-left: -185px;
+        img {
+          width: 600px;
+          height: 600px;
+        }
+        .mask4 {
+          display: none;
+          width: 500px;
+          height: 190px;
+          background: #000;
+          position: absolute;
+          margin: -245px 0 0 50px;
+          text-align: center;
+          padding-top: 10px;
+          a {
+            color: #fff;
+            h2 {
+              font-size: 16px;
+              margin-top: 15px;
+            }
+            h3 {
+              font-size: 24px;
+              margin-top: 15px;
+              font-weight: bold;
+            }
+            p {
+              font-size: 14px;
+              margin-top: 20px;
+            }
+          }
+        }
+      }
+      .background{
+        &:hover{
+          background: #091f2f !important;
+        }
+      }
+      .flower{
+        margin: 15px 75px 0 20px !important;
+      }
+      .black-image {
+        width: 300px;
+        height: 300px;
+        background: #000;
+        position: absolute;
+        margin-top: -163px;
+        margin-left: 430px;
+        .bottom{
+           width: 100%;
+          img{
+            width: 100%;
+          }
+        }
+      }
+      .cover{
+        width: 300px;
+        height: 280px;
+        background: #000;
+        position: absolute;
+        margin-top: -200px;
+        color: #fff;
+        z-index: 2;
+        text-align: left;
+        padding: 20px 0 0 15px;
+        h4{
+          font-size: 18px;
+        }
+        h2{
+          font-size: 30px;
+          margin-top: 20px;
+        }
+        p{
+          font-size: 14px;
+          margin-top: 20px;
+          border-bottom: 1px solid #fff;
+          width: 70px;
         }
       }
     }
