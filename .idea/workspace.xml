@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7fd568f4-dada-45e0-aba5-a198c8001204" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/thisisglamorous/Lyons-800x1054.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/thisisglamorous/goTop.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/styles/sass/.sass-cache/abecab7cf427a86cbac0dc67edb80eb61bc1e09f/thisisglamorous.scssc" afterPath="$PROJECT_DIR$/styles/sass/.sass-cache/abecab7cf427a86cbac0dc67edb80eb61bc1e09f/thisisglamorous.scssc" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javascipt/thisisglamorous.js" afterPath="$PROJECT_DIR$/javascipt/thisisglamorous.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/styles/css/thisisglamorous.css" afterPath="$PROJECT_DIR$/styles/css/thisisglamorous.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/styles/sass/thisisglamorous.scss" afterPath="$PROJECT_DIR$/styles/sass/thisisglamorous.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/thisisglamorous.html" afterPath="$PROJECT_DIR$/views/thisisglamorous.html" />
     </list>
     <ignored path="thisisglamorous.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -259,9 +251,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1281" y="23" width="1278" height="1337" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.266239" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.54370487" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1487669" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
