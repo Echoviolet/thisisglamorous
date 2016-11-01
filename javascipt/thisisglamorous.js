@@ -103,10 +103,18 @@ $(document).ready(function(){
         $('.mask4').fadeOut(500);
     });
 
-    //$('.black-image').mouseenter(function(){
-    //    $('.surface').fadeOut();
-    //})
-
+    $('.cover').mouseenter(function(){
+        $('.cover').fadeOut('slow');
+    });
+    $('.black-image').mouseleave(function(){
+        $('.cover').fadeIn('slow');
+    });
+    $('.cover1').mouseenter(function(){
+        $('.cover1').fadeOut('slow');
+    });
+    $('.black-image1').mouseleave(function(){
+        $('.cover1').fadeIn('slow');
+    });
 
 
 
