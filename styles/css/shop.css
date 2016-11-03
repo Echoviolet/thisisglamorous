@@ -83,6 +83,22 @@ table {
               vertical-align: middle; }
             .nav .main .header ul li a:hover {
               color: rgba(0, 0, 0, 0.7); }
+        .nav .main .header ul .common {
+          width: 250px;
+          padding: 1px 0px 10px 0;
+          box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+          text-align: left;
+          z-index: 999;
+          margin-top: 15px; }
+          .nav .main .header ul .common li {
+            display: block;
+            width: 100%;
+            margin: 15px 0 0 8%; }
+            .nav .main .header ul .common li a {
+              color: rgba(0, 0, 0, 0.8); }
+              .nav .main .header ul .common li a:hover {
+                display: inline;
+                border-bottom: 2px solid #000; }
 
 .content {
   margin-top: 300px;
