@@ -3,124 +3,67 @@ $(document).ready(function(){
 
     //Design
     $('.design').mouseenter(function(){
-        $('.decor').show();
-        $('.inspiration').hide();
-        $('.travel').hide();
-        $('.fashion').hide();
-        $('.culture').hide();
-        $('.food').hide();
-        $('.to').hide();
-        $('.shop').hide();
-
+        $('.decor').fadeIn();
     });
-    $('.decor').mouseleave(function(){
-        $('.decor').hide();
+    $('.design').mouseleave(function(){
+        $('.decor').fadeOut();
     });
 
     //Inspiration
     $('.inspire').mouseenter(function(){
-        $('.decor').hide();
-        $('.inspiration').show();
-        $('.travel').hide();
-        $('.fashion').hide();
-        $('.culture').hide();
-        $('.food').hide();
-        $('.to').hide();
-        $('.shop').hide();
+        $('.inspiration').fadeIn();
     });
-    $('.inspiration').mouseleave(function(){
-        $('.inspiration').hide();
+    $('.inspire').mouseleave(function(){
+        $('.inspiration').fadeOut();
     });
 
     //Travel
     $('.traveller').mouseenter(function(){
-        $('.decor').hide();
-        $('.inspiration').hide();
-        $('.travel').show();
-        $('.fashion').hide();
-        $('.culture').hide();
-        $('.food').hide();
-        $('.to').hide();
-        $('.shop').hide();
+        $('.travel').fadeIn();
     });
-    $('.travel').mouseleave(function(){
-        $('.travel').hide();
+    $('.traveller').mouseleave(function(){
+        $('.travel').fadeOut();
     });
 
     //Fashion
     $('.vogue').mouseenter(function(){
-        $('.decor').hide();
-        $('.inspiration').hide();
-        $('.travel').hide();
-        $('.fashion').show();
-        $('.culture').hide();
-        $('.food').hide();
-        $('.to').hide();
-        $('.shop').hide();
+        $('.fashion').fadeIn();
+
     });
-    $('.fashion').mouseleave(function(){
-        $('.fashion').hide();
+    $('.vogue').mouseleave(function(){
+        $('.fashion').fadeOut();
     });
 
     //Arts
     $('.art').mouseenter(function(){
-        $('.decor').hide();
-        $('.inspiration').hide();
-        $('.travel').hide();
-        $('.fashion').hide();
-        $('.culture').show();
-        $('.food').hide();
-        $('.to').hide();
-        $('.shop').hide();
+        $('.culture').fadeIn();
     });
-    $('.culture').mouseleave(function(){
-        $('.culture').hide();
+    $('.art').mouseleave(function(){
+        $('.culture').fadeOut();
     });
 
     //Food
     $('.goods').mouseenter(function(){
-        $('.decor').hide();
-        $('.inspiration').hide();
-        $('.travel').hide();
-        $('.fashion').hide();
-        $('.culture').hide();
-        $('.food').show();
-        $('.to').hide();
-        $('.shop').hide();
-
+        $('.food').fadeIn();
     });
-    $('.food').mouseleave(function(){
-        $('.food').hide();
+    $('.goods').mouseleave(function(){
+        $('.food').fadeOut();
     });
 
     //How-to
     $('.how').mouseenter(function(){
-        $('.decor').hide();
-        $('.inspiration').hide();
-        $('.travel').hide();
-        $('.fashion').hide();
-        $('.culture').hide();
-        $('.food').hide();
-        $('.to').show();
-        $('.shop').hide();
+        $('.to').fadeIn();
     });
-    $('.to').mouseleave(function(){
-        $('.to').hide();
+    $('.how').mouseleave(function(){
+        $('.to').fadeOut();
     });
 
     //Shop
     $('.shopping').mouseenter(function(){
-        $('.decor').hide();
-        $('.inspiration').hide();
-        $('.travel').hide();
-        $('.fashion').hide();
-        $('.culture').hide();
-        $('.food').hide();
-        $('.to').hide();
-        $('.shop').show();
+        $('.shop').fadeIn();
     });
-    $('.shop').mouseleave(function(){
-        $('.shop').hide();
+    $('.shopping').mouseleave(function(){
+        $('.shop').fadeOut();
     });
 
     //当页面的  的时候，header显示，logo停止滚动
