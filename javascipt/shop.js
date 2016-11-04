@@ -2,11 +2,12 @@ $(document).ready(function(){
     'use strict';
     $(window).bind('scroll',function(){
         var tmp = $(window).scrollTop();
-        if (tmp >100){
+        if (tmp >=10){
             $('.logo-picture').animate({height:'55px'});
         }else
         {
-            $('.logo-picture').animate({height:'125px'});
+            //$('.logo-picture').animate({height:'125px'});
+            $('.logo-picture').stop(true).animate({height:'125px'});
         }
     });
 
