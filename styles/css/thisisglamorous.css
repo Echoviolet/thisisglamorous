@@ -117,19 +117,16 @@ body {
     .nav .header .shop {
       margin-left: -1065px !important; }
 
-.logo {
-  overflow: hidden;
-  width: 100%;
-  height: 150px;
-  z-index: 998;
+#logo {
   position: absolute;
-  top: 82px; }
-  .logo .picLogo {
-    text-align: center; }
-    .logo .picLogo img {
-      width: 382px;
-      height: 146px;
-      outline: 0; }
+  top: 80px;
+  left: 50%;
+  margin-left: -191px;
+  z-index: 98; }
+  #logo img {
+    width: 382px;
+    height: 146px;
+    outline: 0; }
 
 .Picture {
   width: 100%;
@@ -339,14 +336,15 @@ body {
     .Picture .main .showToggle1 {
       display: inline-block;
       vertical-align: top;
-      width: 44%;
+      width: 50%;
       margin: 20px 0 0 -160px; }
       .Picture .main .showToggle1 img {
         width: 600px;
         height: 600px; }
       .Picture .main .showToggle1 .mask4 {
         display: none;
-        width: 93%;
+        position: absolute;
+        width: 500px;
         height: 190px;
         background: #000;
         margin: -245px 0 0 50px;
@@ -376,8 +374,10 @@ body {
       .Picture .main .black-image .bottom {
         width: 100%; }
         .Picture .main .black-image .bottom img {
-          width: 100%; }
+          width: 100%;
+          cursor: pointer; }
       .Picture .main .black-image .cover {
+        position: absolute;
         width: 275px;
         height: 280px;
         background: #000;
@@ -405,11 +405,13 @@ body {
         width: 100%; }
         .Picture .main .black-image1 .bottom img {
           width: 100%;
-          height: 300px; }
+          height: 300px;
+          cursor: pointer; }
       .Picture .main .black-image1 .cover1 {
         width: 275px;
         height: 280px;
         background: #000;
+        position: absolute;
         margin-top: -302px;
         color: #fff;
         z-index: 2;
@@ -458,14 +460,15 @@ body {
       width: 100%; }
       .reborn .main .middle-picture .picture img {
         width: 300px;
-        height: 300px; }
+        height: 300px;
+        cursor: pointer; }
     .reborn .main .middle-picture .mask-flower {
+      position: absolute;
       width: 100%;
       height: 300px;
       background: #000;
-      z-index: 2;
       color: #fff;
-      margin-top: -318px; }
+      margin-top: -303px; }
       .reborn .main .middle-picture .mask-flower h4 {
         font-size: 18px;
         margin: 15px 20px 0 20px; }
@@ -591,10 +594,22 @@ body {
   .up-right1, .down-right1 {
     display: none; } }
 @media (max-width: 599px) {
-  .mask, .mask1, .mask3, .mask4 {
+  .mask, .mask1, .mask3 {
+    display: none !important; } }
+@media (max-width: 970px) {
+  .mask4 {
     display: none !important; } }
 @media (max-width: 670px) {
   .up-left, .down-left {
+    display: none; } }
+@media (max-width: 1021px) {
+  .cover1 {
+    display: none; } }
+@media (max-width: 710px) {
+  .cover {
+    display: none; } }
+@media (max-width: 620px) {
+  .mask-flower {
     display: none; } }
 
 /*# sourceMappingURL=thisisglamorous.css.map */
