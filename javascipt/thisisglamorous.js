@@ -66,16 +66,6 @@ $(document).ready(function(){
         $('.shop').fadeOut();
     });
 
-    //当页面的  的时候，header显示，logo停止滚动
-       $(window).bind('scroll',function(){
-           var temp  = $(window).scrollTop();
-           if(temp >=180){
-               $('.nav').show();
-           }else{
-               $('.nav').hide();
-           }
-       });
-
     //
     $('.left').mouseenter(function(){
         $('.mask').fadeIn(500);
@@ -137,3 +127,4 @@ $(document).ready(function(){
         $('.mask-flower').fadeIn(1000);
     });
 });
+
