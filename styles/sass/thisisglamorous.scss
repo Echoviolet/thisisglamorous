@@ -116,35 +116,14 @@ body{
     }
   }
   .logo{
+    overflow: hidden;
     width: 100%;
     height: 150px;
     z-index: 998;
     position: absolute;
     top: 82px;
-    .what{
-      animation: Top 3s linear;
-    }
-
-    @keyframes Top {
-      from{top: 82px;}
-      to{margin-top: -84px;}
-    }
-    @-webkit-keyframes Top {
-      from{top: 82px;}
-      to{margin-top: -84px;}
-    }
-    @-moz-keyframes Top {
-      from{top: 82px;}
-      to{margin-top: -84px;}
-    }
-    @-o-keyframes Top {
-      from{top: 82px;}
-      to{margin-top: -84px;}
-    }
-    .main{
-      text-align: center;
-    }
     .picLogo{
+      text-align: center;
       img{
         width: 382px;
         height: 146px;
@@ -155,6 +134,7 @@ body{
   .Picture{
     width: 100%;
     margin-top: 13px;
+    overflow: hidden;
     .main {
       text-align: left;
       .left {
@@ -660,7 +640,7 @@ body{
         height: 485px;
         background: #f2f2f2;
         padding: 15px;
-        margin: -700px 0 0 645px;
+        margin: -695px 0 0 645px;
         a{
           display: inline-block;
           vertical-align: top;
@@ -712,6 +692,7 @@ body{
         .up-right{
           margin-top: -15px;
           border-width: 0 30px 30px 0;
+          border-color: transparent #000 transparent transparent;
         }
         .down-left{
           margin: 470px 0 0 -500px;
