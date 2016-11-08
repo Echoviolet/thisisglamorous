@@ -81,15 +81,15 @@ body {
       .allPicture .main-container .pictureBrief img {
         width: 100%; }
       .allPicture .main-container .pictureBrief .hover h3 {
-        color: rgba(0, 0, 0, 0.8);
-        font-size: 23px; }
+        color: rgba(0, 0, 0, 0.75);
+        font-size: 150%; }
         .allPicture .main-container .pictureBrief .hover h3:hover {
           color: rgba(0, 0, 0, 0.5); }
       .allPicture .main-container .pictureBrief .hover p {
         margin-top: 15px;
-        font-size: 14px;
+        font-size: 100%;
         color: rgba(0, 0, 0, 0.8); }
-      .allPicture .main-container .pictureBrief:last-child {
+      .allPicture .main-container .pictureBrief:nth-child(4n) {
         margin-right: 0; }
 
 /*# sourceMappingURL=fashion.css.map */

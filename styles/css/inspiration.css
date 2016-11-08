@@ -1,4 +1,37 @@
 .move {
   bottom: 220px !important; }
 
+.allPicture-hide {
+  margin-top: 20px; }
+  .allPicture-hide .main-container {
+    font-family: 'Baskerville', Georgia, serif; }
+    .allPicture-hide .main-container .pictureBrief {
+      display: inline-block;
+      vertical-align: top;
+      width: 23.5%;
+      padding-bottom: 25px;
+      margin-right: 2%; }
+      .allPicture-hide .main-container .pictureBrief img {
+        width: 100%; }
+      .allPicture-hide .main-container .pictureBrief .hover h3 {
+        color: rgba(0, 0, 0, 0.8);
+        font-size: 130%; }
+        .allPicture-hide .main-container .pictureBrief .hover h3:hover {
+          color: rgba(0, 0, 0, 0.5); }
+      .allPicture-hide .main-container .pictureBrief .hover p {
+        margin-top: 15px;
+        font-size: 100%;
+        color: rgba(0, 0, 0, 0.8); }
+      .allPicture-hide .main-container .pictureBrief:nth-child(4n) {
+        margin-right: 0; }
+
+#Pagination {
+  width: 100%;
+  height: 30px;
+  margin: 50px auto 0 auto; }
+  #Pagination .pagination {
+    margin-left: 40%; }
+    #Pagination .pagination .prev, #Pagination .pagination .next {
+      display: none; }
+
 /*# sourceMappingURL=inspiration.css.map */
