@@ -556,7 +556,7 @@ body {
       color: #000;
       font-size: 16px; }
   .footer .menu {
-    width: 49%;
+    width: 51%;
     display: inline-block;
     vertical-align: top;
     text-align: center; }
@@ -567,7 +567,7 @@ body {
         font-size: 12px;
         color: #000; }
   .footer .goTop {
-    width: 25%;
+    width: 23%;
     display: inline-block;
     vertical-align: top;
     text-align: right; }

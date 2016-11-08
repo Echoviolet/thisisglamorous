@@ -114,11 +114,6 @@ $(document).ready(function(){
         $('.cover1').fadeIn('slow');
     });
 
-//goTop
-    $('.goTop a').click(function(){
-        $('html,body').animate({scrollTop:'0px'},500);
-    });
-
     //
     $('.mask-flower').mouseenter(function(){
         $('.mask-flower').fadeOut(1000);

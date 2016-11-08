@@ -1,18 +1,30 @@
-(function(){
+$(document).ready(function(){
     'use strict';
 
     var mySwiper = new Swiper ('.swiper-container', {
-        direction: 'vertical',
         loop: true,
-
-        // 如果需要分页器
-        pagination: '.swiper-pagination',
-
-        // 如果需要前进后退按钮
         nextButton: '.swiper-button-next',
-        prevButton: '.swiper-button-prev',
+        prevButton: '.swiper-button-prev'
 
-        // 如果需要滚动条
-        //scrollbar: '.swiper-scrollbar',
-    })
-})();
+    });
+
+    $('.swiper-container').mouseenter(function(){
+        $('.swiper-button-white').css('opacity','0.2');
+    });
+    $('.swiper-container').mouseleave(function(){
+        $('.swiper-button-white').css('opacity','0');
+    });
+
+    $('.swiper-button-prev').mouseenter(function(){
+        $('.swiper-button-prev').css('opacity','0.8');
+    });
+    $('.swiper-button-prev').mouseleave(function(){
+        $('.swiper-button-prev').css('opacity','0.3');
+    });
+    $('.swiper-button-next').mouseenter(function(){
+        $('.swiper-button-next').css('opacity','0.8');
+    });
+    $('.swiper-button-next').mouseleave(function(){
+        $('.swiper-button-next').css('opacity','0.3');
+    });
+});
