@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,KAAK;EACH,MAAM,EAAC,gBAAgB",
+"sources": ["../sass/inspiration.scss"],
+"names": [],
+"file": "inspiration.css"
+}
