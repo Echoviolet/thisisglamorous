@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/Echoviolet/thisisglamorous/issues"
   },
-  "homepage": "https://github.com/Echoviolet/thisisglamorous#readme"
+  "homepage": "https://github.com/Echoviolet/thisisglamorous#readme",
+  "devDependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "express-generator": "^4.14.0"
+  }
 }

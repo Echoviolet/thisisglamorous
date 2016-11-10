@@ -78,9 +78,8 @@ table {
             .nav .main .header ul li a span {
               display: inline-block;
               vertical-align: middle; }
-            .nav .main .header ul li a img {
-              display: inline-block;
-              vertical-align: middle; }
+            .nav .main .header ul li a .icon-chevron-thin-down {
+              font-size: 14px !important; }
             .nav .main .header ul li a:hover {
               color: rgba(0, 0, 0, 0.7); }
         .nav .main .header ul .common {
