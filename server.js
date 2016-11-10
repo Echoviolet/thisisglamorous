@@ -5,7 +5,11 @@
 var http = require('http');
 var fs = require('fs');
 var url = require('url');
+var express = require('express');
+var app =express();
+var path =require('path');
 
+app.use(express.static('/' + 'public'));
 
 http.createServer( function (req, res) {
     var pathname = url.parse(req.url).pathname;
@@ -21,7 +25,7 @@ http.createServer( function (req, res) {
 
             //res.writeHead(200, {'Content-Type': 'text/html'});
 
-            res.write(data.toString());
+            res.write(data);
         }
         res.end();
     });
