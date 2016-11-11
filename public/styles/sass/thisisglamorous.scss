@@ -47,7 +47,7 @@ body{
           position: relative;
           display: inline-block;
           vertical-align: top;
-          margin: 18px 25px 0 0;
+          margin: 18px 24px 0 0;
           height: 42px;
           a{
             font-size: 16px;
@@ -60,6 +60,9 @@ body{
               font-size: 14px !important;
               color: pink;
             }
+          }
+          &:last-child{
+            margin-right: 0;
           }
 
         }

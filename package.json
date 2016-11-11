@@ -1,24 +1,12 @@
 {
-  "name": "thisisglamorous",
-  "version": "1.0.0",
-  "description": "hello,,",
-  "main": "index.js",
+  "name": "application-name",
+  "version": "0.0.1",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Echoviolet/thisisglamorous.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Echoviolet/thisisglamorous/issues"
-  },
-  "homepage": "https://github.com/Echoviolet/thisisglamorous#readme",
-  "devDependencies": {
-    "ejs": "^2.5.2",
-    "express": "^4.14.0"
+  "dependencies": {
+    "express": "3.3.2",
+    "ejs": "*"
   }
 }

@@ -70,7 +70,7 @@ body {
         position: relative;
         display: inline-block;
         vertical-align: top;
-        margin: 18px 25px 0 0;
+        margin: 18px 24px 0 0;
         height: 42px; }
         .nav .header ul li a {
           font-size: 16px;
@@ -81,6 +81,8 @@ body {
           .nav .header ul li a .icon-chevron-thin-down {
             font-size: 14px !important;
             color: pink; }
+        .nav .header ul li:last-child {
+          margin-right: 0; }
       .nav .header ul .common {
         display: none;
         background: #fff;
