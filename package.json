@@ -6,7 +6,10 @@
     "start": "node app.js"
   },
   "dependencies": {
+    "ejs": "*",
     "express": "3.3.2",
-    "ejs": "*"
+    "gulp": "^3.9.1",
+    "gulp-ejs": "^2.2.1",
+    "gulp-util": "^3.0.7"
   }
 }
