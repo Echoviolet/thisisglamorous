@@ -47,19 +47,19 @@ gulp.task('images',function(){
 });
 
 //js处理
-//gulp.task('js', function () {
-//    var jsSrc = './public/javascript/*.js',
-//        jsDst ='./dist/js';
-//    gulp.src(jsSrc)
-//        .pipe(jshint())
-//        .pipe(jshint.reporter('default'))
-//        .pipe(concat('main.js'))
-//        .pipe(gulp.dest(jsDst))
-//        .pipe(rename({ suffix: '.min' }))
-//        .pipe(uglify())
-//        .pipe(livereload(server))
-//        .pipe(gulp.dest(jsDst));
-//});
+gulp.task('js', function () {
+    var jsSrc = './public/javascript/*.js',
+        jsDst ='./dist/js';
+    gulp.src(jsSrc)
+        .pipe(jshint())
+        .pipe(jshint.reporter('default'))
+        .pipe(concat('main.js'))
+        .pipe(gulp.dest(jsDst))
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(uglify())
+        .pipe(livereload(server))
+        .pipe(gulp.dest(jsDst));
+});
 
 //清空图片、样式、js
 gulp.task('clean',function(){
@@ -68,35 +68,35 @@ gulp.task('clean',function(){
 });
 
 //默认任务 清空图片、样式、js并重建 运行语句 gulp
-//gulp.task('default',[clean],function(){
-//    gulp.start('html','css','js','images');
-//});
+gulp.task('default',[clean],function(){
+    gulp.start('html','css','js','images');
+});
 
 //监听任务
-//gulp.task('watch',function(){
-//    server.listen(port,function(err){
-//        if(err){
-//            return console.log(err);
-//        }
-//
-//        //监听html
-//        gulp.watch('./views/**/*.html',function(event){
-//            gulp.run('html');
-//        });
-//
-//        //监听css
-//        gulp.watch('./public/styles/sass/*.scss',function(){
-//            gulp.run('css');
-//        });
-//
-//        //监听images
-//        gulp.watch('./public/images/**/*',function(){
-//            gulp.run('images');
-//        })
-//
-//        //监听js
-//        gulp.watch('./public/javascript/**/*.js',function(){
-//            gulp.run('js');
-//        });
-//    })
-//});
+gulp.task('watch',function(){
+    server.listen(port,function(err){
+        if(err){
+            return console.log(err);
+        }
+
+        //监听html
+        gulp.watch('./views/**/*.html',function(event){
+            gulp.run('html');
+        });
+
+        //监听css
+        gulp.watch('./public/styles/sass/*.scss',function(){
+            gulp.run('css');
+        });
+
+        //监听images
+        gulp.watch('./public/images/**/*',function(){
+            gulp.run('images');
+        });
+
+        //监听js
+        gulp.watch('./public/javascript/**/*.js',function(){
+            gulp.run('js');
+        });
+    })
+});
