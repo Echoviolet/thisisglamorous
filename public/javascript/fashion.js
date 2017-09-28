@@ -45,6 +45,7 @@ $(document).ready(function(){
 
         function pageselectCallback(page_index, jq){
             var new_content = $(".allPicture-hide .main-container:eq("+page_index+")").clone();
+            console.log(new_content);
             $(".allPicture").empty().append(new_content); //装载对应分页的内容
             return false;
         }

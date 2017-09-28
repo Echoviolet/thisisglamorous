@@ -1,102 +1,160 @@
-/**
- * Created by echo on 16/11/14.
- */
-// 引入 gulp及组件
-var gulp    = require('gulp'),                 //基础库
-    imagemin = require('gulp-imagemin'),       //图片压缩
-    sass = require('gulp-ruby-sass'),          //sass
-    minifycss = require('gulp-minify-css'),    //css压缩
-    jshint = require('gulp-jshint'),           //js检查
-    uglify  = require('gulp-uglify'),          //js压缩
-    rename = require('gulp-rename'),           //重命名
-    concat  = require('gulp-concat'),          //合并文件
-    clean = require('gulp-clean'),             //清空文件夹
-    tinylr = require('tiny-lr'),               //livereload
-    server = tinylr(),
-    port = 35729,
-    livereload = require('gulp-livereload');   //livereload
+/*-------------------------------------------------------------------
+ Required plugins
+ -------------------------------------------------------------------*/
+var gulp = require('gulp');
+var htmlmin = require('gulp-htmlmin');
+var uglify = require('gulp-uglify');
+var notify = require("gulp-notify");
+var clean = require('gulp-clean');
+var imagemin = require('gulp-imagemin');
+var  plumber = require('gulp-plumber');
+var config = require('./config/app.json');
+var minifyCSS = require('gulp-minify-css');
 
-//HTML 处理
-gulp.task('html',function(){
-    var htmlSrc = './views/**/*.html';
-    var htmlDst = './dist/html';
 
-    gulp.src(htmlSrc)
-        .pipe(livereload(server))
-        .pipe(gulp.dest(htmlDst))
+var autoprefixer = require('gulp-autoprefixer');
+var sass = require('gulp-sass');
+var browserSync = require('browser-sync').create();
+var supervisor = require("gulp-supervisor");
+var ejs = require("gulp-ejs");
+
+/*-------------------------------------------------------------------
+ Configuration
+ -------------------------------------------------------------------*/
+var AUTOPREFIXER_BROWSERS = [
+    'ie >= 9',
+    'ie_mob >= 10',
+    'ff >= 30',
+    'chrome >= 34',
+    'safari >= 4',
+    'opera >= 23',
+    'ios >= 4',
+    'android >= 4.0',
+    'bb >= 10'
+];
+
+var path = {
+    js: './public/javascript',
+    images: './public/images',
+    css: './public/css',
+    scss: './public/scss',
+    html: './views',
+    dist: './dist',
+    bin: './bin',
+};
+var watch = {
+    js: path.js + '/**/*.*',
+    images: path.images + '/**/*.*',
+    css: path.css + '/*.css',
+    scss: path.scss + '/*.scss',
+    html: path.html + '/*.html',
+
+};
+
+
+/*-------------------------------------------------------------------
+ DEVELOP
+ -------------------------------------------------------------------*/
+gulp.task("default", ['clean'] ,function () {
+    gulp.start('serve','node','compile-html','images','scripts','css','sass');
 });
-
-//样式处理
-gulp.task('css',function(){
-    var cssSrc = './public/styles/sass/*.scss';
-    var cssDst = './dist/css';
-
-    return sass(cssSrc, {
-        style: 'compressed',
-        //loadPath: ['./dist/css']
-    })
-        .pipe(gulp.dest(cssDst));
-});
-
-//图片处理
-gulp.task('images',function(){
-    gulp.src('./public/images/**/*')
-        .pipe(imagemin())
-        .pipe(livereload(server))
-        .pipe(gulp.dest('./dist/images'))
-});
-
-//js处理
-gulp.task('js', function () {
-    var jsSrc = './public/javascript/*.js',
-        jsDst ='./dist/js';
-    gulp.src(jsSrc)
-        .pipe(jshint())
-        .pipe(jshint.reporter('default'))
-        .pipe(concat('main.js'))
-        .pipe(gulp.dest(jsDst))
-        .pipe(rename({ suffix: '.min' }))
-        .pipe(uglify())
-        .pipe(livereload(server))
-        .pipe(gulp.dest(jsDst));
-});
-
-//清空图片、样式、js
-gulp.task('clean',function(){
-    gulp.src(['./dist/css','./dist/images','./dist/html'],{read:false})
+gulp.task('clean', function() {
+    return gulp.src([path.dist,path.bin], {read: false})
         .pipe(clean());
 });
 
-//默认任务 清空图片、样式、js并重建 运行语句 gulp
-gulp.task('default',[clean],function(){
-    gulp.start('html','css','js','images');
+gulp.task('serve', function(){
+
+    browserSync.init({
+        proxy:"localhost:"+config.port
+    });
+    gulp.watch(watch.scss, ['sass']);
+    gulp.watch(watch.html, ['compile-html']);
+    gulp.watch(watch.images, ['images']);
+    gulp.watch(watch.js, ['scripts']);
+    gulp.watch(watch.css, ['css']);
+    gulp.watch([watch.scss,watch.html,watch.images,watch.js,watch.css]).on('change', browserSync.reload);
+
+});
+//将ejs拼接好(header+content+footer)的html文件输出到/dist /bin, 并压缩html文件
+function compileHtml(cdnUrl){
+    return gulp.src(watch.html)
+        .pipe(ejs({
+            relativePath:cdnUrl,
+            version: Date.now()
+        }))
+        .pipe(plumber())
+        .pipe(gulp.dest(path.bin))
+        .pipe(htmlmin({collapseWhitespace: true}))
+        .pipe(gulp.dest(path.dist))
+        .pipe(notify("minify html computed!"))
+}
+gulp.task("compile-html",function(){
+    return compileHtml('.');
 });
 
-//监听任务
-gulp.task('watch',function(){
-    server.listen(port,function(err){
-        if(err){
-            return console.log(err);
-        }
 
-        //监听html
-        gulp.watch('./views/**/*.html',function(event){
-            gulp.run('html');
-        });
-
-        //监听css
-        gulp.watch('./public/styles/sass/*.scss',function(){
-            gulp.run('css');
-        });
-
-        //监听images
-        gulp.watch('./public/images/**/*',function(){
-            gulp.run('images');
-        });
-
-        //监听js
-        gulp.watch('./public/javascript/**/*.js',function(){
-            gulp.run('js');
-        });
-    })
+//process for images
+gulp.task('images', function() {
+    return gulp.src(watch.images)
+        .pipe(plumber())
+        .pipe(gulp.dest(path.bin+'/images'))
+        // .pipe(cache(imagemin({ optimizationLevel: 7, progressive: true, interlaced: true })))
+        .pipe(gulp.dest(path.dist+'/images'))
+        .pipe(notify({ message: 'Images task complete' }));
 });
+
+//uglify for javascript
+gulp.task('scripts', function() {
+    return gulp.src(watch.js)
+        .pipe(plumber())
+        // .pipe(rename({ suffix: '.min' }))
+        .pipe(gulp.dest(path.bin+'/javascript'))
+        // .pipe(uglify())
+        .pipe(gulp.dest(path.dist+'/javascript'))
+        .pipe(notify({ message: 'Scripts task complete' }));
+});
+
+//minify for css files
+gulp.task('css', function () {
+    return gulp.src(watch.css)
+        .pipe(gulp.dest(path.dist+'/css'))
+        .pipe(gulp.dest(path.bin+'/css'))
+        .pipe(notify("copy css complete"))
+})
+
+//minify for sass files
+gulp.task('sass', function(){
+
+    return gulp.src(watch.scss)
+        .pipe(sass({
+            style:'expanded',
+            precision:10
+        }).on('error',sass.logError))
+        .pipe(autoprefixer(AUTOPREFIXER_BROWSERS))
+        .pipe(gulp.dest(path.bin+'/css'))
+        .pipe(minifyCSS())
+        .pipe(gulp.dest(path.dist+'/css'))
+        .pipe(notify("less computed!"))
+
+});
+
+gulp.task('node', function (complete) {
+
+    supervisor("app.js",{
+        args: ["--dev"],
+        watch: ["app",'routes'],
+        ignore: ["tasks", "src", "node_modules", "public", "views"],
+        pollInterval: 500,
+        extensions: ["js"],
+        exec: "node",
+        debug: false,
+        debugBrk: false,
+        harmony: true,
+        noRestartOn: "exit",
+        forceWatch: true,
+        quiet: false
+    });
+    complete();
+});
+

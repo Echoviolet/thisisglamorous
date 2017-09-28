@@ -1,35 +1,30 @@
-
 /**
- * Module dependencies.
+ * Created by echo on 16/12/6.
  */
 
 var express = require('express');
-var routes = require('./routes');
-var user = require('./routes/user');
-var http = require('http');
 var path = require('path');
+var bodyParser = require('body-parser');
 var app = express();
+var router = express.Router();
 
-// all environments
-app.set('port', process.env.PORT || 8000);
-app.set('views', path.join(__dirname + '/views'));
-app.engine('.html', require('ejs').__express);
-app.set('view engine', 'html');
-app.use(express.favicon());
-app.use(express.logger('dev'));
-app.use(express.bodyParser());
-app.use(express.methodOverride());
-app.use(app.router);
-app.use(express.static(path.join(__dirname, '/public')));
+var config = require('./config/app.json');
+var routes = require('./routes');
+var environmentDb = process.argv[2];
+var isDev;
 
-// development only
-if ('development' == app.get('env')) {
-  app.use(express.errorHandler());
+environmentDb = environmentDb ? environmentDb:"dev";
+isDev = /dev/i.test(environmentDb);
+app.engine('.html',require('ejs').__express);
+
+app.set('views',path.join(__dirname + '/dist'));
+app.set('view engine','html');
+app.use(bodyParser.json());
+app.use(express.static(__dirname + '/dist'));
+routes(app);
+
+var port = config['port'] || 9000;
+if(!module.parent){
+    app.listen(port);
+    console.log('Express started on port ' + port);
 }
-app.get('/', routes.index);
-
-app.get('/users', user.list);
-
-http.createServer(app).listen(app.get('port'), function(){
-  console.log('Express server listening on port ' + app.get('port'));
-});
